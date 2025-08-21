@@ -8,8 +8,13 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo 'khang test'
+        echo 'Test thành công'
       }
+    }
+    stage('Deploy') {
+            steps {
+                bat 'robocopy . D:\\wwwroot\\mysite *.html /E /MIR /NFL /NDL /NJH /NJS /NP'
+            }
     }
   }
 }
